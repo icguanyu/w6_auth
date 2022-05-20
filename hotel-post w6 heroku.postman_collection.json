@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "574ce099-09fe-47a5-a910-ad5e255b242b",
+		"name": "hotel/post w6 heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "取得所有使用者",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fierce-woodland-53349.herokuapp.com/user",
+							"protocol": "https",
+							"host": [
+								"fierce-woodland-53349",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得個人資料",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODdiMGQ0YjAwZTlmYmQ4OGQ4NzIxMSIsIm5hbWUiOiJOaWNrIiwic2V4IjoiTWFsZSIsIm5vdGUiOiLmuKzoqaYiLCJpYXQiOjE2NTMwNjAzMDIsImV4cCI6MTY1MzY2NTEwMn0.lSoMAlt_YlvinKaHQdiXF651uLiRIxhlax1GGFVqjk8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fierce-woodland-53349.herokuapp.com/user/profile",
+							"protocol": "https",
+							"host": [
+								"fierce-woodland-53349",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "註冊",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nick\",\r\n    \"password\": \"000000\",\r\n    \"confirmPassword\": \"000000\",\r\n    \"email\": \"aaaaa@gmail.com\",\r\n    \"sex\":\"Male\",\r\n    \"note\":\"測試\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fierce-woodland-53349.herokuapp.com/user/sign_up",
+							"protocol": "https",
+							"host": [
+								"fierce-woodland-53349",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登入",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"aaaaa@gmail.com\",\r\n    \"password\": \"000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fierce-woodland-53349.herokuapp.com/user/sign_in",
+							"protocol": "https",
+							"host": [
+								"fierce-woodland-53349",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "重設密碼",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODNhZTcxYzM1OWJmZGEwYzg1NzFmYSIsIm5hbWUiOiJOaWNrIiwiaWF0IjoxNjUyODA1MDkxLCJleHAiOjE2NTM0MDk4OTF9.ZDWkmeJIzIGORJOxREq1IcHDUnVEmewjGqEp-xUKPjM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Bearer",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\": \"\",\r\n    \"newPasswordConfirm\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fierce-woodland-53349.herokuapp.com/user/updatePassword",
+							"protocol": "https",
+							"host": [
+								"fierce-woodland-53349",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "搜尋文章關鍵字(middleware)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fierce-woodland-53349.herokuapp.com/post/search?q=",
+							"protocol": "https",
+							"host": [
+								"fierce-woodland-53349",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"post",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得所有post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fierce-woodland-53349.herokuapp.com/post",
+							"protocol": "https",
+							"host": [
+								"fierce-woodland-53349",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"626e1d09c57b189186b73e80\",\r\n    \"content\": \"Controller createPost測試\",\r\n    \"type\": \"3c\",\r\n    \"tags\": [\"controller\"],\r\n    \"image\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fierce-woodland-53349.herokuapp.com/post",
+							"protocol": "https",
+							"host": [
+								"fierce-woodland-53349",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "'test'",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "刪除單筆post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://fierce-woodland-53349.herokuapp.com/post/6279d148f452ac857d6e4722",
+							"protocol": "https",
+							"host": [
+								"fierce-woodland-53349",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"post",
+								"6279d148f452ac857d6e4722"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "編輯post",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fierce-woodland-53349.herokuapp.com/post/627e173c00b794fbb8dae68a",
+							"protocol": "https",
+							"host": [
+								"fierce-woodland-53349",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"post",
+								"627e173c00b794fbb8dae68a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "對單一post按讚",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"626e1d09c57b1891b3e80\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fierce-woodland-53349.herokuapp.com/post/627e173c00b794fbb8dae68a/like",
+							"protocol": "https",
+							"host": [
+								"fierce-woodland-53349",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"post",
+								"627e173c00b794fbb8dae68a",
+								"like"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
