@@ -11,4 +11,5 @@ router.post('/sign_up', handleErrorAsync((req, res, next) => user.sign_up(req, r
 router.post('/sign_in', handleErrorAsync((req, res, next) => user.sign_in(req, res, next)))
 router.post('/updatePassword', isAuth, handleErrorAsync((req, res, next) => user.updatePassword(req, res, next)))
 router.get('/profile', isAuth, handleErrorAsync((req, res, next) => user.profile(req, res, next)));
+router.patch('/profile/:id', isAuth, handleErrorAsync((req, res, next) => user.updateProfile(req, res, next)));
 module.exports = router;

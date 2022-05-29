@@ -16,8 +16,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       enum: {
         values: ['Male', 'Female'],
-        message: '{VALUE} is not supported',
-      }
+        default: 'Male',
+        message: '性別數值錯誤',
+      },
+      required: [true, '請輸入您的性別'],
     },
     note: String,
     photo: String,
@@ -34,6 +36,7 @@ const userSchema = new mongoose.Schema(
     }
   },
   {
+    versionKey: false,
     collection: 'user',
   }
 );

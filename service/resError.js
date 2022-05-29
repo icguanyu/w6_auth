@@ -15,7 +15,7 @@ const resError = {
   },
   // development error response
   dev: (err, res) => {
-    console.log('(resError.js)');
+    console.log('(resError.js)', err);
     res.status(err.statusCode).json({
       message: err.message,
       // stack: err.stack　// dev用 若有需要可顯示 stack

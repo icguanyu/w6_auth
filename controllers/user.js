@@ -23,6 +23,9 @@ const user = {
     if (password !== confirmPassword) {
       return appError(400, '密碼確認不一致', next)
     }
+    if (sex !== 'Male' && sex !== 'Female') {
+      return appError(400, '性別填寫錯誤', next)
+    }
     if (!validator.isEmail(email)) {
       return appError(400, '信箱格式錯誤', next)
     }
@@ -76,7 +79,25 @@ const user = {
       status: 'success',
       user: req.user
     });
-  }
+  },
+  updateProfile: async (req, res, next) => {
+    const id = req.params.id
+    const data = req.body
+    if (!data.name) {
+      return appError(400, '姓名不得留空', next)
+    }
+    if (!data.sex || (data.sex !== 'Male' && data.sex !== 'Female')) {
+      return appError(400, '性別輸入錯誤且不得留空', next)
+    }
+    const user = await User.findByIdAndUpdate(id, data, { new: true })
+    // new:true 返回更新後的資料
+    if (user !== null) {
+      res.status(200).json({ user })
+    } else {
+      appError(400, 'User不存在', next)
+    }
+
+  },
 
 }
 
