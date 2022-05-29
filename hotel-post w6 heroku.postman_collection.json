@@ -168,14 +168,14 @@
 					"response": []
 				},
 				{
-					"name": "更新使用者 Copy",
+					"name": "更新使用者",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTMwZDQ4MGVjZDVhMDU4Nzc2MzQzZiIsIm5hbWUiOiJOaWNrIiwic2V4IjoiTWFsZSIsIm5vdGUiOiLmuKzoqaYiLCJpYXQiOjE2NTM4MDQzNjAsImV4cCI6MTY1NDQwOTE2MH0.SoDnwXJvr4gli2j0CVHTbVH4pUZbDFjZ7ftR-PVAkN8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODdiMGQ0YjAwZTlmYmQ4OGQ4NzIxMSIsIm5hbWUiOiJOaWNr5pS55ZCNMSIsInNleCI6Ik1hbGUiLCJub3RlIjoiIiwiaWF0IjoxNjUzODA1NDAxLCJleHAiOjE2NTQ0MTAyMDF9.HFYm4kntiGrcbOO-fgUOmM0B_zYAgTrEakUIU-4oB8M",
 									"type": "string"
 								}
 							]
@@ -184,7 +184,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Nick改名1\",\r\n    \"sex\": \"Male\",\r\n    \"note\": \"\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Nick改名2\",\r\n    \"sex\": \"Female\",\r\n    \"note\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -192,7 +192,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://fierce-woodland-53349.herokuapp.com/user/profile/6287b0d4b00e9fbd88d87211",
+							"raw": "https://fierce-woodland-53349.herokuapp.com/user/profile/6287b0d4b00e9fbd88d8721",
 							"protocol": "https",
 							"host": [
 								"fierce-woodland-53349",
@@ -202,7 +202,7 @@
 							"path": [
 								"user",
 								"profile",
-								"6287b0d4b00e9fbd88d87211"
+								"6287b0d4b00e9fbd88d8721"
 							]
 						}
 					},
