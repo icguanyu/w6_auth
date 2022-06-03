@@ -27,9 +27,14 @@ const isAuth = async (req, res, next) => {
       })
     })
     const currentUser = await User.findById(decoded.id);
+    // console.log('currentUser', currentUser);
+    if (currentUser) {
+      req.user = currentUser; // 將 user 放回 req
+      next()
+    } else {
+      return next(appError(400, '找不到使用者，請重新登入。', next));
+    }
 
-    req.user = currentUser; // 將 user 放回 req
-    next()
   } catch (error) {
     if (error.message == 'invalid signature') {
       return next(appError(401, '憑證過期，請重新登入', next));
